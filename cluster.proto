@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package clusterPackage;
+
+service Cluster {
+  rpc allNodes (voidNoParam) returns (nodeItems);
+}
+
+message voidNoParam {}
+
+message nodeItem {
+  int32 id = 1;
+  string nodeName = 2;
+}
+
+message nodeItems {
+  repeated nodeItem items = 1;
+}
